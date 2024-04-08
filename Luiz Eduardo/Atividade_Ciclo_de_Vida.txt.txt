@@ -1,0 +1,56 @@
+import android.os.Bundle;
+import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MinhaAtividade extends AppCompatActivity {
+
+    private static final String TAG = "MinhaAtividade";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Log.i(TAG, "onCreate");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart");
+    }
+}
+
+Ao girar o celular na horizontal, o método onPause é chamado quando o aplicativo deixa de ser o foco, seguido pelo método onStop quando a atividade é parcialmente visível. Em seguida, quando a atividade é recriada na orientação horizontal, os métodos onCreate, onStart e onResume serão chamados na nova atividade.
+
+Ao pressionar o botão de menu para minimizar o aplicativo, o método onPause é chamado quando o aplicativo deixa de ser o foco e passa para o estado de pausa. Se a atividade não for completamente ocultada, o método onStop não será chamado. Quando o aplicativo é restaurado, os métodos onRestart, onStart e onResume são chamados na ordem adequada.
